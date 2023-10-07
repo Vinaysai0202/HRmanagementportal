@@ -1,0 +1,126 @@
+{% include 'hr_app/nav.html' %}
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style1.css'%}">
+    <title>Employeee Data</title>
+    <style>
+        /* Add your CSS styles here */
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+
+        table, th, td {
+            border: 1px solid #eba9a9;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #e86d6d;
+        }
+
+        .div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 10vh;
+            margin: 0;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #e86d6d;
+            color: #080106;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 25px;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <center><h1 class="h3" style="font-size: 40px">Employeee Data</h1></center>
+    <div>
+        {% if employee %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Emp ID</th>
+                    <th>Designation</th>
+                    <th>Date of joining</th>
+                    <th>Department</th>
+                    <th>Salary</th>
+                    <th>Experience</th>
+                    <th>HR Section</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for emp in employee %}
+                    <tr>
+                        <td>{{ emp.name }}</td>
+                        <td>{{emp.empid }}</td>
+                        <td>{{ emp.designation}}</td>
+                        <td>{{ emp.date_of_joining }}</td>
+                        <td>{{emp.department }}</td>
+                        <td>{{emp.salary }}</td>
+                        <td>{{emp.experience }}</td>
+
+                        <td><a href="{% url 'update_employee' emp.id %}"><button>Update</button></a> &nbsp; 
+                            <a href="{% url 'delete_employee' emp.id %}"><button>Delete</button></a></td>
+                        
+
+
+
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+            <h2>No Users </h2>
+        {% endif%}
+    </div>
+    <div class=" div">
+        <div class="button-container">
+            <a href="{% url 'Contact'%}"><button class="button">ADD EMPLOYEE</button></a>
+            &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp&nbsp
+            <a href="{% url 'Hr'%}"><button class="button">BACK TO HR MANAGER</button></a>
+        </div>
+    </div>
+</body>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+<!-- 
+<footer >
+    <p>&copy; 2023 MSRCOSMOS GROUP</p>
+</footer> -->
+</html>
+
+
+
+
+
+

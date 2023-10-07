@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+<head>
+    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style1.css'%}">
+    <style>
+        /* Apply styles to the entire form */
+        .your-form-class {
+            max-width: 30%;
+            background-color: #eebfd9; 
+            padding: 20px;
+            border: 1px solid #737171;
+            margin-left: 2%;
+            padding-left: 1%; 
+            /* display: flexbox;
+            flex-direction: column;
+            align-items: center; 
+            justify-content:center; */
+            color: solid rgb(0, 0, 0);
+            font-size: 20px;
+            box-shadow: 0px 0px 10px rgba(5, 5, 5, 0.5);
+
+
+        }
+    
+        /* Apply styles to specific form fields by targeting their IDs or names */
+        #id_username {
+            width: 50%;
+            padding: 10px;
+            padding-right: 39px;
+            margin-bottom: 10px;
+            border: 1px solid #000000;
+            box-shadow: 0px 0px 10px rgba(5, 5, 5, 0.5);
+
+        }
+        #id_password {
+            width: 50%;
+            padding: 10px;
+            padding-right: 45px;
+            margin-bottom: 10px;
+            border: 1px solid #060000;
+            box-shadow: 0px 0px 10px rgba(5, 5, 5, 0.5);
+
+        }
+         /* Apply styles to the submit button */
+         button[type="submit"] {
+            background-color: #000000;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0px 0px 10px rgba(5, 5, 5, 0.5);
+            margin-right: 0%;
+
+            
+        }
+    </style>
+</head>
+<body >
+    <center>
+        <br>
+        <br>
+    <h1>HR Required to Login For Entering Into  Section </h1>
+    <br>
+    <form method="post"  class="your-form-class">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+
+        <!-- <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br> -->
+
+        <button type="submit">Login</button>
+    </form>
+</center>
+</body>
+</html>

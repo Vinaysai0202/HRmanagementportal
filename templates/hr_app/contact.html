@@ -1,0 +1,141 @@
+{% include 'hr_app/nav.html' %}
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style1.css'%}">
+    <title>Employee_form</title>
+    <style>
+        /* Apply styles to the entire form */
+        .your-form-class {
+            max-width: 35%;
+            background-color: #eebfd9; 
+            padding: 20px;
+            border: 1px solid #737171;
+            margin-left: 30%;
+            padding-left: 9%; 
+            /* display: flexbox;
+            flex-direction: column;
+            align-items: center; 
+            justify-content:center; */
+            color: solid rgb(0, 0, 0);
+            font-size: 20px;
+            box-shadow: 0px 0px 10px rgba(5, 5, 5, 0.5);
+
+
+        }
+    
+        /* Apply styles to specific form fields by targeting their IDs or names */
+        #id_name {
+            width: 50%;
+            padding: 10px;
+            padding-right: 39px;
+            margin-bottom: 10px;
+            border: 1px solid #000000;
+            box-shadow: 0px 0px 10px rgba(5, 5, 5, 0.5);
+
+        }
+        #id_empid {
+            width: 50%;
+            padding: 10px;
+            padding-right: 45px;
+            margin-bottom: 10px;
+            border: 1px solid #060000;
+            box-shadow: 0px 0px 10px rgba(5, 5, 5, 0.5);
+
+        }
+        input#id_subject {
+        padding-right: 28px;
+        }
+    
+
+        #id_date_of_joining {
+            width: 50%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #0d0101;
+            box-shadow: 0px 0px 10px rgba(5, 5, 5, 0.5);
+
+        }
+        #id_department {
+            width: 50%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #0d0101;
+            box-shadow: 0px 0px 10px rgba(5, 5, 5, 0.5);
+
+        }
+        #id_salary {
+        width: 50%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #050000;
+        box-shadow: 0px 0px 10px rgba(5, 5, 5, 0.5);
+        padding-right: 36px;
+}
+        #id_experience {
+            width: 50%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #000000;
+            box-shadow: 0px 0px 10px rgba(5, 5, 5, 0.5);
+            padding-right: 14px;
+
+        }
+        #id_designation {
+            width: 50%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #000000;
+            box-shadow: 0px 0px 10px rgba(5, 5, 5, 0.5);
+            padding-right: 14px;
+
+        }
+        
+    
+        /* Apply styles to the submit button */
+        button[type="submit"] {
+            background-color: #000000;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0px 0px 10px rgba(5, 5, 5, 0.5);
+            margin-right: 17%;
+
+            
+        }
+    </style>
+    
+</head>
+<body>
+    <!-- <center><h1 class="h3" style="font-size: 40px" >Contact Us</h1></center> -->
+   <center> <h1 class="h3" style="font-size: 40px" >Employee Form</h1></center>
+    <br>
+    <div>
+        <form method="post" class="your-form-class">
+            {% csrf_token %}
+            {{ form.as_p}}
+           
+            <a href="{% url 'Home'%}"><center> <button type="submit">Submit</button></center></a>
+        </form>
+    </div>
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+</body>
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<footer>
+    <p>&copy; 2023 MSRCOSMOS GROUP</p>
+</footer>
+
+</html>
+
+
+
+
+
+

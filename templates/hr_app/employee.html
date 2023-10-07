@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% include 'hr_app/nav.html' %}
+{%load static%}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}"> 
+<style>
+    body {
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        height: 100vh;
+        margin: 0;
+    }
+    .div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+        margin: 0;
+    }
+
+    .button-container {
+        text-align: center;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #d1b122;
+        color: #080106;
+        border: none;
+        border-radius: 5px;
+        margin: 10px;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 25px;
+    }
+
+    .button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+    <br>
+    <br>
+    <center><h1 class="h3" style="font-size: 35px"> EMPLOYEE MANAGEMENT PORTAL</h1></center>
+<div class=" div">
+<div class="button-container">
+    <a href="/holiday_list"><button class="button">CALENDER HOLIDAYS </button></a>
+    &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp&nbsp
+    <a href="/news_list"><button class="button">LATEST NEWS</button></a>
+
+</div>
+</div>
+</body>
+   
+    <!-- <footer>
+         <p>&copy; 2023 MSRCOSMOS GROUP</p>
+    </footer> -->
+</body>
+</html>

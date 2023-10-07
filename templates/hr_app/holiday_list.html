@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+{% include 'hr_app/nav.html' %}
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style1.css'%}">
+    <title>Holiday List</title>
+    <style>
+        /* Style the table */
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            margin: 20px auto;
+        }
+        table, th, td {
+            border: 1px solid #0a0a0a;
+        }
+
+        /* Style table headers */
+        th {
+            background-color: #007bff;
+            color: #fff;
+            text-align: left;
+            padding: 10px;
+        }
+
+        /* Style table rows */
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* Style table cells */
+        td {
+            padding: 10px;
+        }
+
+        
+        .div{
+        /* display: flex;
+        justify-content:  right; */
+        
+        height: 20vh;
+        margin: 0;
+    }
+
+    .button-container {
+        text-align: center;padding-left: 23%;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #d1b122;
+        color: #080106;
+        border: none;
+        border-radius: 5px;
+        margin: 10px;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 25px;
+    }
+
+    .button:hover {
+        background-color: #0056b3;
+    }
+
+    </style>
+</head>
+<body>
+    <center><h2 class="h3" style="font-size: 35px">Holiday List</h2></center>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for holiday in holidays %}
+                <tr>
+                    <td>{{ holiday.date }}</td>
+                    <td>{{ holiday.description }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="2">No holidays found.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+   
+    <div class=" div">
+        <div class="button-container">
+        
+            &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp&nbsp
+            <a href="/news_list"><button class="button">LATEST NEWS</button></a>
+        
+        </div>
+        </div>
+    
+
+</body>
+</html>

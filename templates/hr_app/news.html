@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% include 'hr_app/nav.html' %}
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style1.css'%}">
+    <title>Latest News</title>
+    <style>
+        .div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30vh;
+            margin: 0;
+        }
+        #id_date{
+            input-security: date;
+        }
+        .your-form-class {
+            max-width: 35%;
+            background-color: #eebfd9; 
+            padding: 17px;
+            border: 1px solid #737171;
+            margin-left: 31%;
+            padding-left: 4%; 
+            /* display: flexbox;
+            flex-direction: column;
+            align-items: center; 
+            justify-content:center; */
+            color: solid rgb(0, 0, 0);
+            font-size: 20px;
+            box-shadow: 0px 0px 10px rgba(5, 5, 5, 0.5);
+
+
+        }
+        button[type="submit"] {
+            background-color: #000000;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0px 0px 10px rgba(5, 5, 5, 0.5);
+            margin-right: 8%;
+      
+        }
+    </style>
+
+</head>
+<body>
+    
+    <center><h2 class="h3" style="font-size: 35px">Latest News</h2></center>
+    <div>
+    <form method="post" class="your-form-class">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <center><button type="submit">Submit</button></center>
+    </form>
+</div>
+</body>
+</html>

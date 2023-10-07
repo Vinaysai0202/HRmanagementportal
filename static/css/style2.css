@@ -1,0 +1,53 @@
+/* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url("{% static 'images/6.jpg' %}");
+    background-size: cover;
+    background-position: center;
+}
+
+.content {
+    position: relative;
+    z-index: 1; /* Place content above the blurred background */
+    padding: 20px;
+}
+
+/* Apply the blur effect */
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    backdrop-filter: blur(1px); /* Adjust the blur strength */
+}
+
+.btn.btn-lnks {
+    text-decoration: none;
+    font-size: 0.85rem;
+    text-transform: capitalize;
+    font-weight: 500;
+    padding: 0;
+    line-height: 1rem;
+    display: inline-block;
+    transition: all 0.4s ease-out;
+}
+.btnyellowtext {
+    color: #FFB81A;
+}
+
+.serviceCard .card-body .service-textBox {
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    padding: 0 25px 25px 25px;
+}
